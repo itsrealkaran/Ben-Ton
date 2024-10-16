@@ -1,0 +1,14 @@
+[package]
+name = "Ben-Ton"
+version = "1.0.0"
+authors = ["Karan Singh"]
+
+[addresses]
+benton = "_"  
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "mainnet"
+subdir = "aptos-move/framework/aptos-framework"
+
+[dev-dependencies]

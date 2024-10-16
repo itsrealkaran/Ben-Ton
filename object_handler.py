@@ -69,10 +69,13 @@ class ObjectHandler:
             self.game.object_renderer.win()
             pg.display.flip()
             pg.time.delay(1500)
-            self.game.new_game()
+            self.game.game_over()  # Call game_over instead of new_game
 
     def update(self):
+        previous_npc_count = len(self.npc_positions)
         self.npc_positions = {npc.map_pos for npc in self.npc_list if npc.alive}
+        current_npc_count = len(self.npc_positions) 
+
         [sprite.update() for sprite in self.sprite_list]
         [npc.update() for npc in self.npc_list]
         self.check_win()

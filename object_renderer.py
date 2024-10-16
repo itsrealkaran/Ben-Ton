@@ -21,6 +21,7 @@ class ObjectRenderer:
         self.draw_background()
         self.render_game_objects()
         self.draw_player_health()
+        self.draw_score()
 
     def win(self):
         self.screen.blit(self.win_image, (0, 0))
@@ -31,8 +32,8 @@ class ObjectRenderer:
     def draw_player_health(self):
         health = str(self.game.player.health)
         for i, char in enumerate(health):
-            self.screen.blit(self.digits[char], (i * self.digit_size, 0))
-        self.screen.blit(self.digits['10'], ((i + 1) * self.digit_size, 0))
+            self.screen.blit(self.digits[char], (i * self.digit_size, 20))
+        self.screen.blit(self.digits['10'], ((i + 1) * self.digit_size, 20))
 
     def player_damage(self):
         self.screen.blit(self.blood_screen, (0, 0))
@@ -62,3 +63,10 @@ class ObjectRenderer:
             4: self.get_texture('resources/textures/4.png'),
             5: self.get_texture('resources/textures/5.png'),
         }
+        
+    def draw_score(self):
+        score = str(self.game.score).zfill(4) 
+        score_width = len(score) * self.digit_size
+        start_x = (WIDTH - score_width) // 2
+        for i, char in enumerate(score):
+            self.screen.blit(self.digits[char], (start_x + i * self.digit_size, 20))
