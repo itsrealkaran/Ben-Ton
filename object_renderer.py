@@ -30,10 +30,11 @@ class ObjectRenderer:
         self.screen.blit(self.game_over_image, (0, 0))
 
     def draw_player_health(self):
-        health = str(self.game.player.health)
-        for i, char in enumerate(health):
-            self.screen.blit(self.digits[char], (i * self.digit_size, 20))
-        self.screen.blit(self.digits['10'], ((i + 1) * self.digit_size, 20))
+        health = max(0, self.game.player.health)  # Ensure health is not negative
+        health_str = str(health).zfill(2)  # Ensure at least two digits
+        for i, char in enumerate(health_str):
+            self.screen.blit(self.digits[char], (i * self.digit_size + 40, 20))
+        self.screen.blit(self.digits['10'], ((i + 1) * self.digit_size + 40, 20))
 
     def player_damage(self):
         self.screen.blit(self.blood_screen, (0, 0))
@@ -67,6 +68,6 @@ class ObjectRenderer:
     def draw_score(self):
         score = str(self.game.score).zfill(4) 
         score_width = len(score) * self.digit_size
-        start_x = (WIDTH - score_width) // 2
+        start_x = (WIDTH - score_width)
         for i, char in enumerate(score):
-            self.screen.blit(self.digits[char], (start_x + i * self.digit_size, 20))
+            self.screen.blit(self.digits[char], (start_x + i * self.digit_size - 40, 20))

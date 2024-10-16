@@ -15,7 +15,7 @@ module benton::leaderboard {
         scores: Table<address, u64>,
     }
 
-    const MAX_LEADERBOARD_SIZE: u64 = 10;
+    const MAX_LEADERBOARD_SIZE: u64 = 15;
 
 
     public entry fun initialize(account: &signer) {
