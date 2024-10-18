@@ -12,15 +12,12 @@
   - [Configuration](#configuration)
 - [Usage](#usage)
   - [Running the Game](#running-the-game)
-  - [Connecting Wallet](#connecting-wallet)
-  - [Testing Smart Contract](#testing-smart-contract)
 - [Smart Contract](#smart-contract)
   - [Overview](#overview)
   - [Deployment](#deployment)
 - [Contributing](#contributing)
 - [License](#license)
-- [Acknowledgements](#acknowledgements)
-- [Contact](#contact)
+
 
 ## Features
 
@@ -30,6 +27,10 @@
 - **Custodial Wallet Management:** The game manages player wallets, simplifying the blockchain interaction process.
 - **Asynchronous Operations:** Smooth gameplay experience with asynchronous blockchain interactions.
 - **Extensible Architecture:** Modular codebase allowing for easy feature additions and modifications.
+
+## Demo
+
+[![youtube](https://img.youtube.com/vi/gnqpnoYSZIw/maxresdefault.jpg)](https://youtu.be/gnqpnoYSZIw)
 
 ## Getting Started
 
@@ -52,7 +53,7 @@ Follow these instructions to set up and run Ben-Ton on your local machine for de
    cd ben-ton
    ```
 
-2. **Create a Virtual Environment**
+1. **Create a Virtual Environment**
 
    It's recommended to use a virtual environment to manage dependencies.
 
@@ -61,7 +62,7 @@ Follow these instructions to set up and run Ben-Ton on your local machine for de
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
-3. **Install Dependencies**
+1. **Install Dependencies**
 
    ```bash
    pip install -r requirements.txt
@@ -73,7 +74,7 @@ Follow these instructions to set up and run Ben-Ton on your local machine for de
    pip install pygame aptos-sdk
    ```
 
-4. **Set Up Environment Variables**
+1. **Set Up Environment Variables**
 
    Create a `.env` file in the project root directory and add your Aptos node and faucet URLs if different from the defaults.
 
@@ -96,7 +97,7 @@ Follow these instructions to set up and run Ben-Ton on your local machine for de
 
    Replace `YOUR_ADDRESS` with your Aptos address obtained from the Aptos CLI.
 
-2. **Update Configuration**
+1. **Update Configuration**
 
    Update the `contract_address` in `main.py` if it's different from the default provided.
 
@@ -114,7 +115,7 @@ Follow these instructions to set up and run Ben-Ton on your local machine for de
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
-2. **Run the Game**
+1. **Run the Game**
 
    ```bash
    python main.py
@@ -134,7 +135,7 @@ The smart contract is written in Aptos Move and manages the leaderboard function
    aptos move compile
    ```
 
-2. **Publish the Smart Contract**
+1. **Publish the Smart Contract**
 
    ```bash
    aptos move publish --package-dir path/to/contract --named-address benton=YOUR_ADDRESS
@@ -142,7 +143,7 @@ The smart contract is written in Aptos Move and manages the leaderboard function
 
    Replace `YOUR_ADDRESS` with your Aptos address.
 
-3. **Verify Deployment**
+1. **Verify Deployment**
 
    Ensure that the contract is successfully deployed by checking the Aptos DevNet explorer.
 
@@ -157,20 +158,20 @@ Contributions are welcome! Please follow these steps:
    git checkout -b feature/YourFeature
    ```
 
-3. **Commit Your Changes**
+1. **Commit Your Changes**
 
    ```bash
    git commit -m "Add some feature"
    ```
 
-4. **Push to the Branch**
+1. **Push to the Branch**
 
    ```bash
    git push origin feature/YourFeature
    ```
 
-5. **Open a Pull Request**
+1. **Open a Pull Request**
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the MIT License.
